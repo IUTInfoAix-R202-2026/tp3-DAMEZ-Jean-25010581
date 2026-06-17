@@ -3,6 +3,8 @@ package fr.univ_amu.iut.exercice1;
 import java.net.URL;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 /**
@@ -28,17 +30,10 @@ public class PremiereVueFXML extends Application {
 
   @Override
   public void start(Stage primaryStage) throws Exception {
-    // TODO exercice 1 : charger la vue FXML et l'afficher.
-    //
-    // 1. Construire l'URL vers la ressource "PremiereVueFXML.fxml".
-    //    Le fichier vit à côté de cette classe (même paquetage fr.univ_amu.iut.exercice1).
-    //    Utiliser getClass().getResource("PremiereVueFXML.fxml") - JavaFX trouvera le
-    //    fichier en cherchant dans le paquetage courant.
-    //
-    // 2. Appeler FXMLLoader.load(url) qui retourne un Parent (ici un BorderPane).
-    //
-    // 3. Créer une Scene avec ce Parent et la donner à primaryStage.
-    //
-    // 4. Ajouter un titre et show().
+    URL fxmlUrl = getClass().getResource("PremiereVueFXML.fxml");
+    Parent root = FXMLLoader.load(fxmlUrl);
+    primaryStage.setTitle("Première vue FXML");
+    primaryStage.setScene(new Scene(root));
+    primaryStage.show();
   }
 }
